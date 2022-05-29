@@ -26,6 +26,14 @@ tsum.test(mean.x=23500, s.x = 3900, n.x=100, alternative = "greater", mu = 20000
 
 #No 3
 
+df =2
+sp <- (((27 - 1)*(1.32)^2) + ((19 - 1)*(1.67)^2))/(27 + 19 - df)
+sp <- sqrt(sp)
+x2 <- (1/27) + (1/19)
+x <- sqrt(x2)
+t <- (2.79 - 3.64)/(sp*x)
+t
+
 qt(p=.05/2, df = 44, lower.tail = FALSE)
 
 tsum.test(
