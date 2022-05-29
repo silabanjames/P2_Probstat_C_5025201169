@@ -1,9 +1,9 @@
 # No 1
 ## sebelum
-xx <- c(78, 75, 67, 77, 70, 72, 28, 74, 77)
+x <- c(78, 75, 67, 77, 70, 72, 28, 74, 77)
 
 ## sesudah
-yy <- c(100, 95, 70, 90, 90, 90, 89, 90, 100)
+y <- c(100, 95, 70, 90, 90, 90, 89, 90, 100)
 
 selisih <- x - y
 
@@ -12,10 +12,10 @@ sd_sample <- sd(selisih)
 sd_sample
 
 ##1b
-t.test(xx, yy,  paired = TRUE)
+t.test(x, y,  paired = TRUE)
 
 ##1c
-t.test(xx, yy, alternative = "less", paired = TRUE, mu = 0)
+t.test(x, y, alternative = "less", paired = TRUE, mu = 0)
 
 
 #No 2
