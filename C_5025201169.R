@@ -55,25 +55,13 @@ tsum.test(
 # 2,grup 3). Lalu Gambarkan plot kuantil normal untuk setiap kelompok dan
 # lihat apakah ada outlier utama dalam homogenitas varians.
 
-myFile  <- read.table(url("https://rstatisticsandresearch.weebly.com/uploads/1/0/2/6/1026585/onewayanova.txt"))
-dim(myFile)
-head(myFile)
-attach(myFile)
-detach(myFile)
+my_data  <- read.delim(url("https://rstatisticsandresearch.weebly.com/uploads/1/0/2/6/1026585/onewayanova.txt"))
+my_data
 
-myFile$V1 <- as.factor(myFile$V1)
-myFile$V1 <- as.character(myFile$V1)
-myFile$V1[myFile$V1 == "1"] <- "Kucing Oren"
-myFile$V1[myFile$V1 == "2"] <- "Kucing Hitam"
-myFile$V1[myFile$V1 == "3"] <- "Kucing Putih"
-myFile$V1 <- as.factor(myFile$V1)
-myFile <- myFile[-c(1),]
-myFile
-
-grup1 <- subset(myFile, V1=="Kucing Oren")
-grup2 <- subset(myFile, V1=="Kucing Hitam")
-grup3 <- subset(myFile, V1=="Kucing Putih")
-grup1
-grup2
-grup3
+#install packages ("ggpubr")
+library(ggpubr)
+ggboxplot(my_data, x = "Group", y = "Length",
+          color = "Group", palette = c("#00AFBB", "#E7B800", "#FC4E07"),
+          order = c("1", "2", "3"),
+          ylab = "Length", xlab = "Group")
 
